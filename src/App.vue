@@ -2,7 +2,7 @@
   <div class="container">
      <div id="nav">
         <img alt="Vue logo" src="./assets/groupomania.png">
-        <TheForm/>
+        
         <TheNavigation/>
         <router-view/>
       </div>
@@ -15,7 +15,7 @@ import TheNavigation from "./components/TheNavigation.vue"
 
 export default {
  components:{
-   TheNavigation
+  TheNavigation
   
  }
 }

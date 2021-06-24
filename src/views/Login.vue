@@ -5,7 +5,7 @@
     <b-form-input
       id="inline-form-input-name"
       class="mb-2 mr-sm-2 mb-sm-0"
-      placeholder="Jane Doe"
+      placeholder="Name"
     ></b-form-input>
 
     <label class="sr-only" for="inline-form-input-username">Username</label>
@@ -15,7 +15,12 @@
 
     <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0">Remember me</b-form-checkbox>
 
-    <b-button variant="primary">Save</b-button>
+    <b-button variant="primary">Submit</b-button>
+
+<!-- <router-link to="/login">Login</router-link> -->
+    <!-- <router-link to="/signup">Signup</router-link> -->
+
+    <!-- <router-view/> -->
   </b-form>
 </div>
 </template>

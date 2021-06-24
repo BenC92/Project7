@@ -29,6 +29,11 @@ export default new Router ({
             path: "/profile",
             name: "profile",
             component : () => import (/* webpackChunkName : "profile"*/"./views/Profile")
+        },
+        {
+            path: "/logoff",
+            name: "logoff",
+            component : () => import (/*webpackChunkName : "logoff"*/"./views/Logoff")
         }
         
        
