@@ -4,12 +4,11 @@ import Home from "./views/Home.vue";
 
 
 
-Vue.use (Router);
+Vue.use(Router);
 
 
-export default new Router ({
-    routes: [
-        {
+export default new Router({
+    routes: [{
             path: "/home",
             name: "home",
             component: Home
@@ -17,25 +16,25 @@ export default new Router ({
         {
             path: "/login",
             name: "login",
-            component : () => import (/* webpackChunkName : "login"*/"./views/Login")
+            component: () => import( /* webpackChunkName : "login"*/ "./views/Login")
 
         },
         {
             path: "/signup",
             name: "signup",
-            component: () => import (/* webpackChunkName : "signup"*/"./views/Signup")
+            component: () => import( /* webpackChunkName : "signup"*/ "./views/Signup")
         },
         {
             path: "/profile",
             name: "profile",
-            component : () => import (/* webpackChunkName : "profile"*/"./views/Profile")
+            component: () => import( /* webpackChunkName : "profile"*/ "./views/Profile")
         },
         {
             path: "/logoff",
             name: "logoff",
-            component : () => import (/*webpackChunkName : "logoff"*/"./views/Logoff")
+            component: () => import( /*webpackChunkName : "logoff"*/ "./views/Logoff")
         }
-        
-       
+
+
     ]
 })

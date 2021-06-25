@@ -14,23 +14,15 @@
       :text="post.text"
       :img-src="post.imgSrc"
     />
-
-   
-   
-
-  
-    
   </div>
 </template>
 
 <script>
 import Post from "@/components/Post.vue";
 
-
 export default {
   components: {
     Post,
-    
   },
   data: () => ({
     postTitle: "",
