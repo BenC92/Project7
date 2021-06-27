@@ -14,6 +14,13 @@
       :text="post.text"
       :img-src="post.imgSrc"
     />
+
+    <div v-if="!image">
+    </div>
+    <div v-else>
+      <img :src="image" />
+      <!-- <button @click="removeImage">Delete image</button> -->
+   </div>
   </div>
 </template>
 
