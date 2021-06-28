@@ -18,7 +18,7 @@
     <div v-if="!image"></div>
     <div v-else>
       <img :src="image" />
-      <!-- <button @click="removeImage">Delete image</button> -->
+      <button @click="removeImage">Delete image</button>
     </div>
   </div>
 </template>
@@ -59,7 +59,7 @@ export default {
       this.createImage(files[0]);
     },
     createImage(file) {
-      //var image = new Image();
+      // var image = new Image();
       var reader = new FileReader();
       var vm = this;
 
@@ -68,9 +68,9 @@ export default {
       };
       reader.readAsDataURL(file);
     },
-    //removeImage: function (e) {
-    //this.image = '';
-    //}
+    removeImage: function () {
+    this.image = '';
+    }
   },
 };
 </script>

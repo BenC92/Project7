@@ -1,12 +1,6 @@
 <template>
   <div>
     <b-form inline>
-      <label class="sr-only" for="inline-form-input-name">Name</label>
-      <b-form-input
-        id="inline-form-input-name"
-        class="mb-2 mr-sm-2 mb-sm-0"
-        placeholder="Name"
-      ></b-form-input>
 
       <label class="sr-only" for="inline-form-input-username">Username</label>
       <b-input-group prepend="@" class="mb-2 mr-sm-2 mb-sm-0">
@@ -15,6 +9,15 @@
           placeholder="Username"
         ></b-form-input>
       </b-input-group>
+
+      
+      <label class="sr-only" for="inline-form-input-Password">Password</label>
+      <b-form-input
+        id="inline-form-input-name"
+        class="mb-2 mr-sm-2 mb-sm-0"
+        placeholder="password"
+        required
+      ></b-form-input>
 
       <b-form-checkbox class="mb-2 mr-sm-2 mb-sm-0"
         >Remember me</b-form-checkbox

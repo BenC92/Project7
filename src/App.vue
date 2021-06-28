@@ -3,8 +3,8 @@
     <b-navbar toggleable="lg" type="dark" variant="dark">
       <img class="logo" alt="Vue logo" src="./assets/groupomania.png" />
       <b-navbar-brand
-        ><router-link to="/home">Home</router-link></b-navbar-brand
-      >
+        ><router-link to="/home">Home</router-link></b-navbar-brand>
+      
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -36,17 +36,17 @@
       </b-collapse>
     </b-navbar>
 
-    <TheNavigation />
+    <!-- <TheNavigation /> -->
     <router-view />
   </div>
 </template>
 
 <script>
-import TheNavigation from "./components/TheNavigation.vue";
+// import TheNavigation from "./components/TheNavigation.vue";
 
 export default {
   components: {
-    TheNavigation,
+    // TheNavigation,
   },
 };
 </script>
