@@ -7,9 +7,11 @@
     <router-view/>
 
     <hr>
+    <div id="text">
     <h1>Successfully logged off</h1>
 
     <p>You have successfully logged of. Come back soon</p>
+    </div>
   </div>
 </template>
 
@@ -19,5 +21,7 @@
 #app {
   text-align: center;
 }
-
+#text{
+  padding: 5px;
+}
 </style>

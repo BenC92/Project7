@@ -59,7 +59,7 @@ export default {
       this.createImage(files[0]);
     },
     createImage(file) {
-      // var image = new Image();
+      //var image = new Image();
       var reader = new FileReader();
       var vm = this;
 
@@ -68,9 +68,9 @@ export default {
       };
       reader.readAsDataURL(file);
     },
-    removeImage: function () {
-      this.image = "";
-    },
+    removeImage: function (e) {
+    this.image = '';
+    }
   },
 };
 </script>
