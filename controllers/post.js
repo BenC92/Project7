@@ -1,7 +1,7 @@
 const Sauce = require('../models/sauce');
 const fs = require('fs');
 
-exports.createSauce = (req, res, next) => {
+exports.createPost = (req, res, next) => {
   const sourceData = JSON.parse(req.body.sauce);
   console.log(sourceData)
   const url = req.protocol + '://' + req.get('host');
