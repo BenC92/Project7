@@ -69,8 +69,8 @@ export default {
       reader.readAsDataURL(file);
     },
     removeImage: function () {
-    this.image = '';
-    }
+      this.image = "";
+    },
   },
 };
 </script>
