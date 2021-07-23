@@ -6,9 +6,10 @@ exports.createPost = (req, res, next) => {
   console.log(sourceData)
   const url = req.protocol + '://' + req.get('host');
   const post = new Post({
-    name: sourceData.name,
+    name: Post.name,
     imageUrl: url + '/images/' + req.file.filename,
-    userId: sourceData.userId,
+    userId: Post.userId,
+    title: Post.title
   });
   post.save().then(
     () => {
@@ -84,3 +85,72 @@ exports.deletePost = (req, res, next) => {
 // };
 
 
+exports.likePost = (req, res, next) => {
+  console.log(req.body)
+
+  const userId = req.body.userId
+  const like = req.body.like
+  const id = req.params.id
+
+  Post.findOne({
+      _id: id
+    })
+    .then(post => {
+      const sauceData = {
+        _id: id
+      }
+
+      const usersDisliked = post.usersDisliked.includes(userId)
+
+      if (like > 0) {
+        sauceData.$inc = {
+          likes: 1
+        }
+        sauceData.$push = {
+          usersLiked: userId
+        }
+      } else if (like === -1) {
+        sauceData.$inc = {
+          dislikes: 1
+        }
+        sauceData.$push = {
+          usersDisliked: userId
+        }
+      } else {
+        if (usersDisliked) {
+          sauceData.$inc = {
+            dislikes: -1
+          }
+          sauceData.$pull = {
+            usersDisliked: userId
+          }
+        } else {
+          sauceData.$inc = {
+            likes: -1
+          }
+          sauceData.$pull = {
+            usersLiked: userId
+          }
+        }
+      }
+
+      console.log(sauceData)
+
+      post.updateOne({
+          _id: id
+        }, sauceData)
+        .then(
+          () =>
+          res.status(201).json({
+            message: 'Post has been liked! :)'
+          })
+
+        ).catch(
+          (error) => {
+            res.status(404).json({
+              error: error
+            });
+          }
+        );
+    })
+};
