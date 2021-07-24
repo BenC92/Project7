@@ -26,10 +26,10 @@
         ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-3" label="Passwort:" label-for="imput-3">
+      <b-form-group id="input-group-3" label="Password:" label-for="imput-3">
         <b-form-input
           id="input-3"
-          v-model="form.passport"
+          v-model="form.password"
           type="passwort"
           placeholder="password"
           required
@@ -59,7 +59,6 @@ export default {
       form: {
         email: "",
         name: "",
-        food: null,
         checked: [],
       },
       show: true,
