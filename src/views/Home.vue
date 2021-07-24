@@ -72,6 +72,13 @@ export default {
     this.image = '';
     }
   },
+  mounted(){
+    fetch('http://localhost:3000/api/post')
+  .then(response => response.json())
+  .then(data => {
+    this.posts = data
+  });
+  }
 };
 </script>
 

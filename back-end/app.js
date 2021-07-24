@@ -2,10 +2,12 @@ const express= require('express');
 const path= require('path');
 const cors= require('cors');
 
-
-
+const postRoutes= require('./routes/post')
+//const userRoutes = require ('./route/user')
 
 const app = express();
+
+
 
 
 
@@ -24,19 +26,9 @@ app.use(cors({
   credentials: true
 }))
 
-const Sequelize = require('sequelize');
-const sequelize = new Sequelize('codeforgeek', 'postgres', 'shahid', {
-  host: 'localhost',
-  dialect: 'postgres',
-  pool: {
-    max: 9,
-    min: 0,
-    idle: 10000
-  }
-});
+app.use('/images', express.static(path.join(__dirname, 'images')));
 
-sequelize.authenticate().then(() => {
-  console.log("Success!");
-}).catch((err) => {
-  console.log(err);
-});
+app.use('/api/post', postRoutes);
+// app.use('/api/auth', userRoutes);
+
+module.exports= app
