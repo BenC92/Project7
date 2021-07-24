@@ -36,15 +36,6 @@
           ></b-form-input>
       </b-form-group>
 
-      <b-form-group id="input-group-4" label="Food:" label-for="input-4">
-        <b-form-select
-          id="input-4"
-          v-model="form.food"
-          :options="foods"
-          required
-        ></b-form-select>
-      </b-form-group>
-
       <b-form-group id="input-group-5" v-slot="{ ariaDescribedby }">
         <b-form-checkbox-group
           v-model="form.checked"
@@ -71,13 +62,6 @@ export default {
         food: null,
         checked: [],
       },
-      foods: [
-        { text: "Select One", value: null },
-        "Pizza",
-        "Burger",
-        "Cookies",
-        "Cake",
-      ],
       show: true,
     };
   },
