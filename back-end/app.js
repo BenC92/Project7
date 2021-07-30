@@ -22,6 +22,7 @@ app.use(cors({
     }
     return callback(null, true)
   },
+  allowedHeaders: ["Access-Control-Allow-Headers, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"],
   exposedHeaders: ['Origin, X-Requested-With, Content, Content-Length, Accept, Content-Type, Authorization'],
   credentials: true
 }))

@@ -82,8 +82,17 @@ export default {
         this.show = true;
       });
     },
-  },
+  },mounted(){
+    fetch('http://localhost:3000/api/user')
+  .then(response => response.json())
+  .then(data => {
+    this.user = data
+  }).catch(err => {
+    console.error('Error: ', err);
+  });
+  }
 };
+
 </script>
 
 <style>
@@ -91,3 +100,5 @@ export default {
   color: white;
 }
 </style>
+
+ 

@@ -26,6 +26,9 @@
 <script>
 import Post from "@/components/Post.vue";
 
+
+
+
 export default {
   components: {
     Post,
@@ -50,8 +53,35 @@ export default {
       const post = {
         title: this.postTitle,
         text: this.postText,
+        userId: 1,
       };
       this.posts.unshift(post);
+      console.log(JSON.stringify(post))
+     
+     fetch ('http://localhost:3000/api/post', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(post)
+          
+        })
+          // .then(res => res.json())
+          // .then(data => console.log(data))
+          .catch(err => console.error(err))
+      // fetch('http://localhost:3000/api/post', {
+      //     method: 'POST',
+      //     body: JSON.stringify(post),
+      //     headers: {
+      //         'Content-Type': 'application/json'
+      //     }
+      // })
+      //     .then(res => res.json())
+      //   .then(res => console.log(res))
+      //   .catch(err =>{
+      //     console.error('Error: ',err);
+      //   })
+      
     },
     onFileChange(e) {
       var files = e.target.files || e.dataTransfer.files;
@@ -68,7 +98,7 @@ export default {
       };
       reader.readAsDataURL(file);
     },
-    removeImage: function (e) {
+    removeImage: function () {
     this.image = '';
     }
   },
@@ -77,6 +107,8 @@ export default {
   .then(response => response.json())
   .then(data => {
     this.posts = data
+  }).catch(err => {
+    console.error('Error: ', err);
   });
   }
 };

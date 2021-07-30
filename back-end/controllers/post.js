@@ -3,28 +3,29 @@ const Post = db.Post
 const fs = require('fs');
 
 exports.createPost = (req, res, next) => {
-  const sourceData = JSON.parse(req.body);
-  console.log(sourceData)
-  const url = req.protocol + '://' + req.get('host');
-  const post = new Post({
-    name: Post.name,
-    imageUrl: url + '/images/' + req.file.filename,
-    userId: Post.userId,
-    title: Post.title
-  });
-  post.save().then(
-    () => {
-      res.status(201).json({
-        message: 'Post saved successfully!'
-      });
-    }
-  ).catch(
-    (error) => {
-      res.status(400).json({
-        error: error
-      });
-    }
-  );
+  console.log(req.body)
+  // const data = JSON.parse(req.body);
+  // console.log(data)
+  // const url = req.protocol + '://' + req.get('host');
+  // const post = new Post({
+  //   name: data.name,
+  //   content: req.file ? url + '/images/' + req.file.filename : data.text,
+  //   userId: data.userId,
+  //   title: data.title
+  // });
+  // post.save().then(
+  //   () => {
+  //     res.status(201).json({
+  //       message: 'Post saved successfully!'
+  //     });
+  //   }
+  // ).catch(
+  //   (error) => {
+  //     res.status(400).json({
+  //       error: error
+  //     });
+  //   }
+  // );
 };
 
  exports.getOnePost = (req, res, next) => {
